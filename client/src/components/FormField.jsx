@@ -1,4 +1,6 @@
 import React from "react";
+import { Typography, Box, useTheme } from "@mui/material";
+import { tokens } from "../theme";
 
 const FormField = ({
   labelName,
@@ -10,12 +12,16 @@ const FormField = ({
   isSurpriseMe,
   handleSurpriseMe,
 }) => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
   return (
     <div>
       <div className="flex items-center gap-2 mb-2">
         <label
           htmlFor={name}
           className="block text-sm font-medium text-gray-900"
+          style={{ color: colors.grey[100] }}
         >
           {labelName}
         </label>
